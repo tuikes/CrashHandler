@@ -21,7 +21,7 @@ public class ShowExceptionActivity extends Activity {
 
     public static void showException(Throwable throwable) {
         Application applicationContext = CrashManager.getInstance().getApplication();
-        if (applicationContext != null && BuildConfig.DEBUG) {
+        if (applicationContext != null) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             throwable.printStackTrace(new PrintStream(byteArrayOutputStream));
             String msg = new String(byteArrayOutputStream.toByteArray());
