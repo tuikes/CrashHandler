@@ -36,7 +36,7 @@ public class ShowExceptionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_exception);
+        setContentView(R.layout.activity_crash_handler_show_exception);
 
         int backBtnId = getResources().getIdentifier("back_btn", "id", getPackageName());
         int exceptionId = getResources().getIdentifier("show_exception_view", "id", getPackageName());
