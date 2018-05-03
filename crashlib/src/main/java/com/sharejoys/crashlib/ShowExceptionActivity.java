@@ -37,13 +37,17 @@ public class ShowExceptionActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_exception);
-        exceptionView = findViewById(R.id.show_exception_view);
-        findViewById(R.id.back_btn).setOnClickListener(new View.OnClickListener() {
+
+        int backBtnId = getResources().getIdentifier("back_btn", "id", getPackageName());
+        int exceptionId = getResources().getIdentifier("show_exception_view", "id", getPackageName());
+        findViewById(backBtnId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+        exceptionView = findViewById(exceptionId);
+
         handlerIntent(getIntent(), false);
     }
 
