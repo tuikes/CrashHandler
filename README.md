@@ -14,11 +14,13 @@ step 1.在根目录 build.gradle 上添加配置
 		}
 	}
 step 2.在当前module的build.gradle添加如下依赖
+--------
 	dependencies {
 			implementation 'com.github.tuikes:CrashHandler:v1.7'
 	}
 	
 step 3.在Application中完成初始化
+--------
     @Override
     public void onCreate() {
         super.onCreate();
@@ -27,8 +29,10 @@ step 3.在Application中完成初始化
         }
     }
     
-##效果演示
-###step 1.测试代码源码
+效果演示
+======
+step 1.测试代码源码
+--------
 类型为TextView的result控件没有findViewById导致奔溃
 
     @Override
@@ -44,5 +48,6 @@ step 3.在Application中完成初始化
             }
         });
     }
-###step 2.运行查看效果
+step 2.运行查看效果
+--------
 ![ABC](https://github.com/tuikes/MarkdownPhotos/blob/master/crashHandlerLibTest.gif) 
