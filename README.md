@@ -1,22 +1,24 @@
-##CrashHandlerLib
+CrashHandlerLib
 ======
 一个基于UncaughtExceptionHandler实现的Android奔溃日志捕获依赖库，使用该库可以显性的将奔溃日志展示出来，有助于开发以及测试人员在工作中及时定位奔溃问题。
 
-##使用手册
+使用手册
+======
 
-###step 1.在根目录 build.gradle 上添加配置
+step 1.在根目录 build.gradle 上添加配置
+--------
 	allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-###step 2.在当前module的build.gradle添加如下依赖
+step 2.在当前module的build.gradle添加如下依赖
 	dependencies {
 			implementation 'com.github.tuikes:CrashHandler:v1.7'
 	}
 	
-###step 3.在Application中完成初始化
+step 3.在Application中完成初始化
     @Override
     public void onCreate() {
         super.onCreate();
