@@ -2,6 +2,9 @@ package com.sharejoys.crashlib;
 
 import android.app.Application;
 
+import com.sharejoys.crashlib.ui.ExceptionCaughtAdapter;
+import com.sharejoys.crashlib.util.CrashHelper;
+
 /**
  * Created by chendx on 2018/5/2
  *
@@ -25,6 +28,7 @@ public class CrashManager {
 
     public void init(Application application) {
         this.application = application;
+        CrashHelper.init();
         Thread.UncaughtExceptionHandler handler = Thread.getDefaultUncaughtExceptionHandler();
         ExceptionCaughtAdapter exceptionCaughtAdapter = new ExceptionCaughtAdapter(handler);
         Thread.setDefaultUncaughtExceptionHandler(exceptionCaughtAdapter);

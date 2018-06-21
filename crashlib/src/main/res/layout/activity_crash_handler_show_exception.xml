@@ -8,39 +8,44 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="44dp"
         android:background="#FFFFFF"
         android:gravity="center_vertical">
 
-        <ImageView
+        <TextView
             android:id="@+id/back_btn"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:src="@mipmap/ic_crash_handler_lib_back"/>
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/ic_crash_handler_lib_back"
             android:text="奔溃日志"
-            android:textColor="#333333"
+            android:textColor="#000"
             android:textSize="18sp"/>
+
+        <ImageView
+            android:id="@+id/share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/app_name"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/ic_crash_handler_lib_share"/>
 
     </RelativeLayout>
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/show_exception_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:textColor="#DDFF0000"
-            android:textSize="11.1sp"/>
+            android:textColor="#ff0000"
+            android:textSize="13sp"/>
     </ScrollView>
 
 </LinearLayout>
