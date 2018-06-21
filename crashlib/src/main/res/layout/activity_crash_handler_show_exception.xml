@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:drawableLeft="@mipmap/ic_crash_handler_lib_back"
             android:text="奔溃日志"
-            android:textColor="#000"
+            android:textColor="#4d73f4"
             android:textSize="18sp"/>
 
         <ImageView
