@@ -119,7 +119,7 @@ public final class CrashHelper {
      *
      * @return dir
      */
-    public static String getDefaultCrashDir() {
+    private static String getDefaultCrashDir() {
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
                 && CrashManager.getInstance().getApplication().getExternalCacheDir() != null) {
             return CrashManager.getInstance().getApplication().getExternalCacheDir()
@@ -233,7 +233,7 @@ public final class CrashHelper {
      * @param fileUri  文件uri
      * @param fileType 文件类型（具体文件类型可参见本类下方注释）
      */
-    public static void shareFile(Activity activity, Uri fileUri, String fileType) {
+    private static void shareFile(Activity activity, Uri fileUri, String fileType) {
         //表示要创建一个发送指定内容的隐式意图
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

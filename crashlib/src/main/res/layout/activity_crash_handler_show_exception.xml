@@ -37,13 +37,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/show_exception_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:padding="10dp"
             android:textColor="#ff0000"
             android:textSize="13sp"/>
     </ScrollView>

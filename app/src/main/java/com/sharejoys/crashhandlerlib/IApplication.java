@@ -39,9 +39,7 @@ public class IApplication extends Application {
             return;
         }
         gInstance = this;
-        if (BuildConfig.DEBUG) {
-            CrashManager.getInstance().init(this);
-        }
+        CrashManager.getInstance().init(this, BuildConfig.DEBUG);
     }
 
     @Override

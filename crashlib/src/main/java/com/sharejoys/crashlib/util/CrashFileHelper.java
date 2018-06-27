@@ -1,6 +1,7 @@
 package com.sharejoys.crashlib.util;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -188,15 +189,15 @@ public class CrashFileHelper {
 
     /**
      * 获取文件对应的URI
-     * @param activity
+     * @param context
      * @param file
      * @return
      */
-    public static Uri getUri(Activity activity, File file) {
+    public static Uri getUri(Context context, File file) {
         Uri uri;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //data是file类型,忘了复制过来
-            uri = FileProvider.getUriForFile(activity, activity.getPackageName() + "."+FILE_PROVIDER_NAME,
+            uri = FileProvider.getUriForFile(context, context.getPackageName() + "."+FILE_PROVIDER_NAME,
                     file);
         } else {
             uri = Uri.fromFile(file);

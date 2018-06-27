@@ -4,17 +4,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.PopupWindowCompat;
-import android.text.Layout;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.sharejoys.crashlib.CrashManager;
 import com.sharejoys.crashlib.R;
-import com.sharejoys.crashlib.util.CrashHelper;
 
 
 /**
@@ -26,12 +20,12 @@ public class ShowExceptionActivity extends Activity {
     private static final String KEY_CRASH_INFO = "key_crash_info";
     private TextView exceptionView;
 
-    public static void showException(Throwable throwable) {
+    public static void showException(String crashInfo) {
         Application applicationContext = CrashManager.getInstance().getApplication();
         if (applicationContext != null) {
             Intent intent = new Intent(applicationContext, ShowExceptionActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra(KEY_CRASH_INFO, CrashHelper.buildCrashInfo(throwable));
+            intent.putExtra(KEY_CRASH_INFO, crashInfo);
             applicationContext.startActivity(intent);
         }
     }
@@ -59,7 +53,7 @@ public class ShowExceptionActivity extends Activity {
         findViewById(shareBtnId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CrashHelper.shareCrashFile(ShowExceptionActivity.this);
+                CrashManager.getInstance().shareCrashFile(ShowExceptionActivity.this);
             }
         });
     }
