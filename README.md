@@ -16,7 +16,7 @@ step 1.在根目录 build.gradle 上添加配置
 step 2.在当前module的build.gradle添加如下依赖
 --------
 	dependencies {
-		com.github.CrazyCoder01:CrashHandler:v1.9'
+		com.github.CrazyCoder01:CrashHandler:v2.0'
 	}
 	
 step 3.在Application中完成初始化
@@ -24,9 +24,7 @@ step 3.在Application中完成初始化
     @Override
     public void onCreate() {
         super.onCreate();
-        if (BuildConfig.DEBUG) {
-            CrashManager.getInstance().init(this);
-        }
+        CrashManager.getInstance().init(this, BuildConfig.DEBUG);
     }
     
 效果演示
@@ -41,10 +39,18 @@ step 1.测试代码源码
         setContentView(R.layout.activity_main);
         test = findViewById(R.id.test);
 
-        test.setOnClickListener(new View.OnClickListener() {
+       test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.setText("hello world");
+                Log.d("cdx", test2.getText().toString());
+            }
+        });
+
+        findViewById(R.id.share_crash_file).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //将奔溃信息分享到第三方
+                CrashManager.getInstance().shareCrashFile(MainActivity.this);
             }
         });
     }
