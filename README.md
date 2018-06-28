@@ -32,7 +32,8 @@ step 3.在Application中完成初始化
 step 1.测试代码源码
 --------
 1>>>奔溃日志文件分享到QQ、微信等第三方:
-     CrashManager.getInstance().shareCrashFile(MainActivity.this);
+
+    CrashManager.getInstance().shareCrashFile(MainActivity.this);
 
 2>>>类型为TextView的result控件没有findViewById导致奔溃
 
