@@ -13,24 +13,24 @@
         android:gravity="center_vertical">
 
         <TextView
-            android:id="@+id/back_btn"
+            android:id="@+id/crash_lib_activity_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:drawableLeft="@mipmap/ic_crash_handler_lib_back"
+            android:drawableLeft="@mipmap/ic_back_crash_lib_activity"
             android:text="奔溃日志"
             android:textColor="#4d73f4"
             android:textSize="18sp"/>
 
         <ImageView
-            android:id="@+id/share_btn"
+            android:id="@+id/crash_lib_activity_share_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:contentDescription="@string/app_name"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:src="@mipmap/ic_crash_handler_lib_share"/>
+            android:src="@mipmap/ic_share_crash_lib_activity"/>
 
     </RelativeLayout>
 
@@ -40,7 +40,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/show_exception_view"
+            android:id="@+id/crash_lib_activity_show_exception_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:padding="10dp"

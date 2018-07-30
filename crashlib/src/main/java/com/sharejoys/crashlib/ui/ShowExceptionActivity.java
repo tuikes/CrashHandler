@@ -34,16 +34,16 @@ public class ShowExceptionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crash_handler_show_exception);
+        setContentView(R.layout.crash_lib_activity_show_exception);
         setListener();
-        int exceptionId = getResources().getIdentifier("show_exception_view", "id", getPackageName());
+        int exceptionId = getResources().getIdentifier("crash_lib_activity_show_exception_view", "id", getPackageName());
         exceptionView = findViewById(exceptionId);
         handlerIntent(getIntent(), false);
     }
 
     private void setListener() {
-        int backBtnId = getResources().getIdentifier("back_btn", "id", getPackageName());
-        int shareBtnId = getResources().getIdentifier("share_btn", "id", getPackageName());
+        int backBtnId = getResources().getIdentifier("crash_lib_activity_back_btn", "id", getPackageName());
+        int shareBtnId = getResources().getIdentifier("crash_lib_activity_share_btn", "id", getPackageName());
         findViewById(backBtnId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
