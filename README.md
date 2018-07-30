@@ -16,7 +16,7 @@ step 1.在根目录 build.gradle 上添加配置
 step 2.在当前module的build.gradle添加如下依赖
 --------
 	dependencies {
-		com.github.CrazyCoder01:CrashHandler:v2.0'
+		implementation 'com.github.tuikes:CrashHandler:v2.1'
 	}
 	
 step 3.在Application中完成初始化
