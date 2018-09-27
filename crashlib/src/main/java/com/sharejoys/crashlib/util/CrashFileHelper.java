@@ -1,6 +1,5 @@
 package com.sharejoys.crashlib.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -268,6 +267,11 @@ public class CrashFileHelper {
                 }
             }
         } else {
+            if (file.getName().toLowerCase().startsWith("zip")) {
+                file.delete();
+                return;
+            }
+
             Log.i(TAG, "the file name is -->>" + file.getName() + " the base dir -->>" + baseDir);
             byte[] buf = new byte[2048];
             InputStream input = new BufferedInputStream(new FileInputStream(file));
