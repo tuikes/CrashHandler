@@ -221,7 +221,7 @@ public class CrashFileHelper {
         try {
             zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(zipFilePath)));
             for (File file : fs) {
-                if (file == null || !file.exists()) {
+                if (file == null || !file.exists() || file.getName().toLowerCase().endsWith("zip")) {
                     continue;
                 }
                 if (file.isDirectory()) {
@@ -267,11 +267,6 @@ public class CrashFileHelper {
                 }
             }
         } else {
-            if (file.getName().toLowerCase().startsWith("zip")) {
-                file.delete();
-                return;
-            }
-
             Log.i(TAG, "the file name is -->>" + file.getName() + " the base dir -->>" + baseDir);
             byte[] buf = new byte[2048];
             InputStream input = new BufferedInputStream(new FileInputStream(file));
